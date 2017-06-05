@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="凡少"/>
+    <meta name="description" content="凡少demo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <script src="jquery-1.7.2.min.js"></script>
+    <title>发牌动画</title>
+    <style>
+        .m-game{
+            position: absolute;
+            bottom:0;
+            width: 100%;
+            height: 5.44rem;
+            box-sizing: border-box;
+        }
+        .m-card{
+            height: 4.266667rem;
+            padding-top: 0.266667rem;
+            box-sizing: border-box;
+            background-size: 100% 0.133333rem,100% 100%;
+        }
+        .poker-box,.stake-box{
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+        }
+        .poker-box{
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+        }
+        .poker-box{
+            margin-bottom: 0.16rem;
+        }
+        .poker-area,{
+            flex: 1;
+            overflow: hidden;
+        }
+        .poker-area ul{
+            width: 2.54rem;
+            height: 1.466667rem;
+            margin:0 auto;
+        }
+        .poker-area li{
+            width: 1.066667rem;
+            height: 1.466667rem;
+            background: url('img/poker_back.png') no-repeat;
+            background-size: 100% 100%;
+            float: left;
+            margin-left: -0.7rem;
+        }
+        .poker-area li:first-child{
+            margin-left: 0;
+        }
+        .deal-section{
+
+        }
+        .deal-section ul{
+            height: 100%;
+        }
+        .deal-section li{
+            position: absolute;
+            width: 1.066667rem;
+            height: 1.466667rem;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            transform: translate(-50%,-50%);
+            background: url('img/poker_back.png') no-repeat;
+            background-size: 100% 100%;
+        }
+        /*卡牌旋转动画*/
+        .deal-section .rotate{
+            animation:myfirst .5s linear 1;
+            -webkit-animation:myfirst .5s linear 1;
+            -moz-animation:myfirst .5s linear 1; /* Firefox */
+            -o-animation:myfirst .5s linear 1; /* Opera */
+        }
+        @keyframes myfirst
+        {
+            0%   {transform:translate(-50%,-50%) rotate(0deg);}
+            25%  {transform:translate(-50%,-50%) rotate(90deg);}
+            50%  {transform:translate(-50%,-50%) rotate(180deg);}
+            75%  {transform:translate(-50%,-50%) rotate(270deg);}
+            100% {transform:translate(-50%,-50%) rotate(360deg);}
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="m-game">
+        <!-- 牌区 -->
+        <div class="m-card">
+            <div class="poker-box">
+                <div class="poker-area">
+                    <ul class="f-cb">
+
+                    </ul>
+                </div>
+                <div class="poker-area">
+                    <ul class="f-cb">
+
+                    </ul>
+                </div>
+                <div class="poker-area">
+                    <ul class="f-cb">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="deal-section">
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <button class="btn" style="background: #f0ad4e;width: 100px;height: 50px;font-size: 18px">发牌</button>
+    <button class="reset" style="background: cornflowerblue;width: 100px;height: 50px;font-size: 18px">复位</button>
+    <script>
+        var pokerNum = 0;
+        var leftarr = [];
+        for(var i=0;i<3;i++){
+            leftarr.push($('.poker-box ul').eq(i).offset().left);
+        }
+        var Tp = $('.poker-box ul').eq(0).offset().top;
+        var width = $('.deal-section li').eq(0).width();
+        var height = $('.deal-section li').eq(0).height();
+        function dealPoker(){
+            if(pokerNum<15){
+                if(pokerNum<5){
+                    $('.deal-section li').eq(pokerNum).addClass('rotate').animate({"top":Tp+height/2,"left":leftarr[0]+width/2+0.35*width*(pokerNum%5)},500);
+                    pokerNum++;
+                    if(pokerNum==5){
+                        setTimeout(function(){
+                            dealPoker();
+                        },400);
+                    }else{
+                        setTimeout(function(){
+                            dealPoker();
+                        },50);
+                    }
+                }else if(pokerNum<10){
+                    $('.deal-section li').eq(pokerNum).addClass('rotate').animate({"top":Tp+height/2,"left":leftarr[1]+width/2+0.35*width*(pokerNum%5)},500);
+                    pokerNum++;
+                    if(pokerNum==10){
+                        setTimeout(function(){
+                            dealPoker();
+                        },1400);
+                    }else{
+                        setTimeout(function(){
+                            dealPoker();
+                        },50);
+                    }
+                }else{
+                    $('.deal-section li').eq(pokerNum).addClass('rotate').animate({"top":Tp+height/2,"left":leftarr[2]+width/2+0.35*width*(pokerNum%5)},500);
+                    pokerNum++;
+                    setTimeout(function(){
+                        dealPoker();
+                    },50);
+                }
+            }
+        }
+
+        $('.btn').on('click',function(){
+            dealPoker();
+        })
+
+//         复位??
+        $('.reset').on('click',function(){
+            window.location.reload();
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+diff a/.idea/workspace.xml b/.idea/workspace.xml	(rejected hunks)
+@@ -33,7 +33,7 @@
+           </provider>
+         </entry>
+       </file>
+-      <file leaf-file-name="发牌动画.html" pinned="false" current-in-tab="true">
++      <file leaf-file-name="发牌动画.html" pinned="false" current-in-tab="false">
+         <entry file="file://$PROJECT_DIR$/myworknode/mywork/workdemo/发牌动画.html">
+           <provider selected="true" editor-type-id="text-editor">
+             <state relative-caret-position="27">
+@@ -133,7 +143,8 @@
+     <sorting>DEFINITION_ORDER</sorting>
+   </component>
+   <component name="ProjectFrameBounds">
+-    <option name="y" value="35" />
++    <option name="x" value="231" />
++    <option name="y" value="26" />
+     <option name="width" value="1920" />
+     <option name="height" value="990" />
+   </component>
+@@ -328,18 +361,18 @@
+       <workItem from="1492159393752" duration="3745000" />
+       <workItem from="1496393794980" duration="5557000" />
+       <workItem from="1496401677393" duration="312000" />
+-      <workItem from="1496556128103" duration="290000" />
++      <workItem from="1496556128103" duration="608000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TimeTrackingManager">
+-    <option name="totallyTimeSpent" value="9904000" />
++    <option name="totallyTimeSpent" value="10222000" />
+   </component>
+   <component name="ToolWindowManager">
+-    <frame x="0" y="35" width="1920" height="990" extended-state="0" />
+-    <editor active="false" />
++    <frame x="231" y="26" width="1920" height="990" extended-state="1" />
++    <editor active="true" />
+     <layout>
+-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18483412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
++      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18483412" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
