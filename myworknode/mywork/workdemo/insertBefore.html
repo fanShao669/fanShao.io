@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>insertBefore</title>
+    <script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<ul id="myList"><li>Coffee</li><li>Tea</li></ul>
+
+<p id="demo">请点击按钮向列表插入一个项目。</p>
+
+<button onclick="myFunction()">试一下</button>
+
+<script>
+
+    function myFunction()
+    {
+        var newItem=document.createElement("LI");
+        var textnode=document.createTextNode("Water");
+        newItem.appendChild(textnode);
+
+        var list=document.getElementById("myList");
+        list.insertBefore(newItem,list.childNodes[0]);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>生成随机数</title>
+    <script src="jquery-1.11.0.min.js"></script>
+</head>
+<body>
+    <script>
+
+//        方法一
+
+//        var rnd = Math.random(); //返回0-1之间的任意小数
+
+//        方法二
+        var rnd = Math.floor(Math.random() * 1000000); //返回0-n之间的任意整数(不包括n)
+        console.log(rnd);
+        document.write(rnd);
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>判断是否为数字类型</title>
+</head>
+<body>
+    <script>
+        function isDigit(value) {
+            var patrn = /^[0-9]*$/;
+            if (patrn.exec(value) == null || value == "") {
+                return false
+            } else {
+                return true
+            }
+        }
+        // demo:
+        isDigit("sdf");     //false
+        if(isDigit("sdf") == false){
+            alert('error');
+        }
+        console.log(isDigit("sdf"));
+        isDigit(12);        //true
+        console.log(isDigit(1234567));
+    </script>
+</body>
+</html>

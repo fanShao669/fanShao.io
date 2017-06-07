@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+    <script>
+       function flashTitle(){
+         time=new Date();
+         str=time.getHours()+':'+time.getMinutes()+':'+time.getSeconds();
+          document.title='我是'+str;
+          setTimeout('flashTitle()',1000);
+       }
+      flashTitle();
+    </script>
+</body>
+</html>

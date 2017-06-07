@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>window.onload使用多次</title>
+    <script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+    <script>
+        function addLoadEvent(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function() {
+                    oldonload();
+                    func();
+                }
+            }
+        }
+        // demo：
+        addLoadEvent(2);  //可使用多次
+
+    </script>
+</body>
+</html>

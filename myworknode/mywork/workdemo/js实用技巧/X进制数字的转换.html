@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>X进制数字的转换</title>
+    <script src="jquery-1.11.0.min.js"></script>
+</head>
+<body>
+    <script>
+
+        //    2 10 16进制转换成10进制
+        var a = parseInt("0x5f",16); //31
+        console.log(a);
+        var b = parseInt("4256",10); //31
+        console.log(b);
+        var c = parseInt("11111111111",2); //211
+        console.log(c);
+
+        //10进制转换成2进制
+        var d = 3000;
+        console.log(d.toString(2));
+        //10进制转换成8进制
+        console.log(d.toString(8));
+        //10进制转换成16进制
+        console.log(d.toString(16));
+
+    </script>
+</body>
+</html>

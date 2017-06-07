@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>实现字符串长度截取并在结尾添加</title>
+</head>
+<body>
+    <script>
+        function cutstr(str, len) {
+            var temp;
+            var icount = 0;
+            var patrn = /[^\x00-\xff]/;  //表示汉字或者全角，即ASCII 编码不在0-255的字符
+            var strre = "";
+            for (var i = 0; i < str.length; i++) {
+                if (icount < len) {
+                    // 每次截取一个字符
+                    temp = str.substr(i, 1);
+                    if (patrn.exec(temp) == null) {
+                        // 如果是英文、半角
+                        icount = icount + 1
+                    } else {
+                        // 如果是中文、全角
+                        icount = icount + 2
+                    }
+                    // 字符串连接
+                    strre += temp
+                } else {
+                    break
+                }
+            }
+            if(str.length<=len){
+                return strre;
+            }else{
+                return strre + "..."
+            }
+        }
+        // demo:
+        console.log(cutstr("xu1", 2));  //xu...
+        console.log(cutstr("轩枫阁", 5));  //轩枫...rmatCash(num));
+    </script>
+</body>
+</html>

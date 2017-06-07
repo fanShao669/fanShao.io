@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>金钱格式转换</title>
+</head>
+<body>
+    <div id="love">1,561,124</div>
+    <script>
+        //金钱格式转换成正常格式
+        var sLove = document.getElementById("love"); //slove = 1,561,124
+        var reg = sLove.innerHTML.replace(/,/g,""); //reg = 1561124
+        console.log(reg);
+
+        //数字转换成金钱格式的函数
+        function formatCash(cash){
+            var str_cash = cash + "";//转换成字符串
+            var ret_cash = "";
+            var counter = 0;
+            for(var i=str_cash.length-1;i>=0;i--){
+                ret_cash = str_cash.charAt(i) + ret_cash;
+                counter++;
+                if(counter==3){
+                    counter = 0;
+                    if(i!=0){
+                        ret_cash = "," + ret_cash;
+                    }
+                }}
+            return ret_cash;
+        }
+
+        //demo
+               var num = 10100000002145;
+                formatCash(num);
+                console.log(formatCash(num));
+
+    </script>
+</body>
+</html>

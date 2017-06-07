@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>延迟函数调用</title>
+    <script src="jquery-1.11.0.min.js"></script>
+</head>
+<body>
+    <script>
+        var tId = setTimeout("myFun()",1000); //延迟1000毫秒后再调用myFun()函数
+        function myFun(){
+            //do something
+            clearTimeout(tId); //销毁对象
+        }
+    </script>
+</body>
+</html>

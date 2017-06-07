@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title> 获取主域名</title>
+</head>
+<body>
+    <script>
+        function getHost(url) {
+            var host = "null";
+            if(typeof url == "undefined"|| null == url) {
+                url = window.location.href;
+            }
+            var regex = /^\w+\:\/\/([^\/]*).*/;
+            var match = url.match(regex);
+            if(typeof match != "undefined" && null != match) {
+                host = match[1];
+            }
+            return host;
+        }
+        // demo:
+        getHost("http://www.xuanfengge.com/page/2")   //www.xuanfengge.com
+    </script>
+</body>
+</html>

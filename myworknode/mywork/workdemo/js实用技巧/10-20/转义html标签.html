@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>替换全部</title>
+</head>
+<body>
+    <script>
+        function HtmlEncode(text) {
+            return text.replace(/&/g, '&amp').replace(/\"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        }
+        // demo:
+        HtmlEncode("<p></p>");    //&lt;html&gt;&lt;/html&gt;
+        document.write( HtmlEncode("<p></p>"))
+        console.log(HtmlEncode("<p></p>"))
+    </script>
+</body>
+</html>

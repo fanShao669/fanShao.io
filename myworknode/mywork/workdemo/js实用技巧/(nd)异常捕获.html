@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>小数转整数</title>
+    <script src="jquery-1.11.0.min.js"></script>
+</head>
+<body>
+    <script>
+        try{ expression } catch(e){ } finally{}
+
+        //不处理任何异常
+        window.onerror = doNothing;
+        function doNothing(){ return true; }
+
+        //异常类可用的属性
+        description : 异常描述(IE,NN)
+        fileName : 异常页面URI(NN)
+        lineNumber : 异常行数(NN)
+        message : 异常描述(IE,NN)
+        name : 错误类型(IE,NN)
+        number : 错误代码(IE)
+
+        //错误信息(兼容所有浏览器)
+        try{}
+        catch(e){
+            var msg = (e.message) ? e.message : e.description;
+            alert(msg);
+        }
+    </script>
+</body>
+</html>

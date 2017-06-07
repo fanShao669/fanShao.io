@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>insertafter在结点后面插入内容</title>
+    <script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+    <ul id="list">
+        <li></li>
+    </ul>
+    <button>后一个</button>
+    <script>
+        // insertAfter        console.log(targetElement)
+        function insertAfter(newElement,targetElement){
+            var parent=targetElement.parentNode;
+            if(parent.lastChild==targetElement){
+                parent.appendChild(newElement);
+            } else{
+                parent.insertBefore(newElement,targetElement.nextSibling);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>手机号码3-4-4格式</title>
+    <script src="jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<input type="text" id="tel" placeholder="手机号码" oninput="if(value.length>13)value=value.slice(0,13)">
+    <script>
+        // 手机号码3-4-4格式
+        function formatPhone(value){
+            value.bind('input propertychange',function(){
+                $(document).keydown(function(event){
+                    if(event.keyCode==8){
+                        return;
+                    }if(value.val().length == 3 || value.val().length == 8){
+                        var phone = value.val()+" ";
+                        value.val(phone);
+                    }
+                })
+            });
+            function emptyAll(str,global){
+                var telre;
+                telre = str.replace(/(^\s+)|(\s+$)/g,"");
+                if(global.toLowerCase() == "g"){
+                    telre = telre.replace(/\s/g,"");
+                }
+                return telre;
+            };
+            emptyAll(value.val(),"g");
+        }
+        formatPhone($('#tel'))
+        console.log(formatPhone($('#tel'))
+        )
+    </script>
+</body>
+</html>

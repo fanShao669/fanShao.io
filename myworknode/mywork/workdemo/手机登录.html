@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>demo</title>
+    <style>
+        .g-box{
+            width: 100px;
+            height:50px;
+            background:grey;
+        }
+        .g-box.color{
+            background: yellow;
+        }
+        button{
+            width: 50px;
+            height: 30px;
+            background-color: #00B7FF;
+        }
+    </style>
+    <script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+    npm install -g express-generator
+    <input class="Ip" type="number" placeholder="请输入手机号码" onkeyup="this.value=this.value.replace(/\D/g,'')" oninput="if(value.length>11)value=value.slice(0,11);if(value.length>=11){mobileTest();$(this).blur();$('.Ipt').focus();$('.g-box').addClass('color')}else{$('.g-box').removeClass('color')}">
+    <button>重置</button>
+    <input class="Ipt" type="number" placeholder="输入验证码" c>
+    <div class="g-box">获取验证码</div>
+    <script>
+        $('button').on('click',function(){
+            $('.Ip').val('').focus();
+        })
+        function mobileTest(){
+            var regFormcmobile = $('.Ip').val();
+            if(/^1[34578][0-9]{9}$/.test(regFormcmobile)){
+                alert('正确');
+            }
+            else{
+                alert('错误@!!!');
+            }
+        }
+
+    </script>
+</body>
+</html>

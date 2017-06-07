@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>替换全部</title>
+</head>
+<body>
+    <script>
+        String.prototype.replaceAll = function(s1, s2) {
+            return this.replace(new RegExp(s1, "gm"), s2)
+        }
+        // demo:
+        var str = 'sads1s5sad';
+        str.replaceAll('s','b');   //呵呵呵
+        console.log(str.replaceAll('s','b'));
+    </script>
+</body>
+</html>

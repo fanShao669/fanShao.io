@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>清除左右空格</title>
+</head>
+<body>
+    <script>
+        String.prototype.trim=function(){
+            return this.replace(/(^\s*)|(\s*$)/g, "");
+        };
+        String.prototype.ltrim=function(){
+            return this.replace(/(^\s*)/g,"");
+        };
+        String.prototype.rtrim=function(){
+            return this.replace(/(\s*$)/g,"");
+        };
+        // demo:
+        var str ="                    fanShao  ";
+        console.log(str);
+        var strtrim = str.trim();
+        console.log(strtrim);
+        " xuanfeng    ".trim()  //xuanfeng
+        "  xuanfengge".ltrim()  //xuanfengge
+        "chrislee    ".rtrim()  //chrislee
+    </script>
+</body>
+</html>

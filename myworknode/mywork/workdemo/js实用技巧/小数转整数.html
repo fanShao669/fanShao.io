@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <title>小数转整数</title>
+    <script src="jquery-1.11.0.min.js"></script>
+</head>
+<body>
+    <script>
+        var f = 1.5;
+        var a = Math.round(f); //结果:2 (四舍五入)
+        console.log(a);
+        var b = Math.ceil(f); //结果:2 (返回大于f的最小整数)
+        console.log(b);
+        var c = Math.floor(f); //结果:1 (返回小于f的最大整数)
+        console.log(c);
+    </script>
+</body>
+</html>
