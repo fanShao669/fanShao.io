@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>嵌入app的H5页面的title的修改</title>
+</head>
+<body>
+<script>
+    var userAgent = navigator.userAgent;
+    var cookiestr = document.cookie;
+    if (userAgent.indexOf('cdvsupport') >= 0 || cookiestr.indexOf('cdvsupport') >= 0) {
+        //alert('nativejs')
+        document.write("<script type='text/javascript' src='nacodovafile/js/cdplugins.js#nacodovafile'><\/script>");
+        document.write("<script type='text/javascript' src='nacodovafile/js/cordova.js#nacodovafile'><\/script>");
+    }
+
+    function deviceReadyOne(cb_back){
+        var deviceReady = function(){
+            document.removeEventListener("deviceready", deviceReady, false);
+            if('function' == typeof cb_back){
+                cb_back();
+            }
+        }
+        document.addEventListener("deviceready", deviceReady, false);
+    }
+
+    // export default {
+    function setPageTitle(title) {
+        document.title = title;
+        var callback = function(){
+            try{
+                window.CD58UtilsPlugin.setTitle(title);
+            }catch(e){}
+        }
+        if (window.CD58UtilsPlugin) {
+            callback();
+        } else {
+            deviceReadyOne(callback);
+        }
+    }
+</script>
+</body>
+</html>
