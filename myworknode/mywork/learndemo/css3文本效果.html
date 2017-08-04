@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -35,5 +35,34 @@
         以及更早的版本，不支持 text-shadow 属性。
         以及更早的版本，不支持 text-shadow 属性。
     </div>
+
+
+
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inp">
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script>
+        $(function(){
+            //手机号验证时 /^1[3|4|5|7|8]\d{1}\s\d{4}\s\d{4}$/
+            $("#inp").keyup(function(){
+                _self = $(this);
+                if(_self.val().length == 3 || _self.val().length == 8){
+                    var str = _self.val()+" ";
+                    _self.val(str);
+                }
+            });
+        });
+    </script>
 </body>
 </html>

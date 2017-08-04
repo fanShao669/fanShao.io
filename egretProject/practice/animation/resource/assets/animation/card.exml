@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="card" width="400" height="300" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+	<w:Declarations>
+		<tween:TweenGroup id="one">
+			<tween:TweenItem target="{image3}">
+				<tween:Set>
+					<tween:props>
+						<e:Object rotation="{0}"/>
+					</tween:props>
+				</tween:Set>
+				<tween:To duration="500" ease="sineOut">
+					<tween:props>
+						<e:Object x="{67}" y="{221}" rotation="{360}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{image2}">
+				<tween:Wait duration="100"/>
+				<tween:Set/>
+				<tween:To duration="400" ease="sineOut">
+					<tween:props>
+						<e:Object x="{91}" y="{222}" rotation="{360}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{image1}">
+				<tween:Wait duration="250"/>
+				<tween:Set/>
+				<tween:To duration="250" ease="sineOut">
+					<tween:props>
+						<e:Object x="{119}" y="{223}" rotation="{360}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+			<tween:TweenItem target="{image0}">
+				<tween:Wait duration="400"/>
+				<tween:Set/>
+				<tween:To duration="100" ease="sineOut">
+					<tween:props>
+						<e:Object rotation="{360}" x="{272}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+	</w:Declarations>
+	<e:Image id="image3" source="card_png" x="196" y="67" anchorOffsetX="38" anchorOffsetY="57"/>
+	<e:Image source="card_png" x="230" y="11"/>
+	<e:Image id="image2" source="card_png" x="218" y="69" anchorOffsetX="39" anchorOffsetY="58"/>
+	<e:Image id="image1" source="card_png" x="248" y="72" anchorOffsetX="39" anchorOffsetY="58"/>
+	<e:Image id="image0" source="card_png" x="277" y="70" anchorOffsetX="41" anchorOffsetY="57"/>
+	<e:Image id="image" source="card_png" x="300" y="71" anchorOffsetX="40" anchorOffsetY="57" width="-2"/>
+	<e:Group width="242" height="226" x="214.5" y="230.5" anchorOffsetX="101.5" anchorOffsetY="77.5" visible="false">
+		<e:Button label="Button" x="65" y="31"/>
+		<e:Image source="bg_jpg" x="125.74" y="98.54" anchorOffsetX="90.74" anchorOffsetY="85.54" width="632" height="1127"/>
+	</e:Group>
+	<e:Button label="Button" x="50" y="50" visible="false"/>
+</e:Skin>

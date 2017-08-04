@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>滚动加载</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        html,body{
+            width:100%;
+            height: 100%;
+        }
+        .box{
+            width: 100%;
+            /*height: 100%;*/
+            /*padding: 50px 0;*/
+        }
+        .tab{
+            position: fixed;
+            display: table;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid #e6e6e6;
+            text-align: center;
+            background: white;
+            z-index:999999;
+        }
+        .tab li{
+            display: table-cell;
+            font-size: 20px;
+            border:1px solid #eee;
+        }
+        .section{
+            width: 100%;
+            height: 100%;
+            padding:55px 0;
+            overflow: auto;
+            background: lightblue;
+        }
+        footer{
+            position: fixed;
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            bottom:0;
+            text-align: center;
+            background: white;
+        }
+        footer ul{
+            display: table;
+            width: 100%;
+            height: 100%;
+        }
+        footer ul li{
+            display: table-cell;
+            height: 100%;
+            line-height: 50px;
+            border:1px solid #eee;
+            font-size: 20px;
+        }
+    </style>
+    <script src="jquery-1.7.2.min.js"></script>
+</head>
+<body>
+        <!-- tab -->
+    <ul class="tab">
+        <li>可使用</li>
+        <li>已过期</li>
+        <li>已使用</li>
+    </ul>
+<div class="box">
+    <div class="section">
+        <p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+          <p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+        <p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p><p>王者荣耀陪练走起</p>
+
+    </div>
+</div>
+   
+    <footer>
+        <ul>
+            <li>开车</li>
+            <li>订单</li>
+            <li>我的</li>
+        </ul>
+    </footer>
+    <script>
+        //滑动加载
+        $(window).scroll(function(){ 
+            console.log('我在滑动');
+            var totalheight = parseFloat($(window).height()) + parseFloat($(window).scrollTop()); 
+            if($(document).height() <= totalheight){
+
+                console.log('loading');
+            }
+        })
+    </script>
+</body>
+</html>

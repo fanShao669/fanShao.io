@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="凡少"/>
+    <meta name="description" content="凡少demo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="MultiPicker.css">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <script src='../jquery-1.7.2.min.js'></script>
+    <script src="MultiPicker.js"></script>
+    <title>多级联动</title>
+
+</head>
+<body>
+    <!-- #targetInput 可以是任意的dom, 只要你方便展示 -->
+    <input id="targetInput" type="text" readonly placeholder="12313123213" />
+    <!-- #targetContainer 最好是位于body下的最外层的dom -->
+    <div id="targetContainer"></div>
+    
+    <script>
+        new MultiPicker({
+            "input":"targetInput",
+            "container":"targetContainer",
+            "jsonData":[
+              {
+                'id':1,
+                'value':'包时长',
+                'child':[{'id':1,'value':'1小时'},{'id':2,'value':'2小时'},{'id':3,'value':'3小时'},{'id':4,'value':'一天'}]
+              },
+              {
+                'id':2,
+                'value':'包上星',
+                'child':[{'id':1,'value':'朝阳区111'},{'id':00102,'value':'海淀区111'}]
+              },
+            ],
+            "success":function(arr){
+                console.log(arr);
+                $('#targetInput').val(arr[1].value);
+            }
+        });
+    </script>
+</body>
+</html>

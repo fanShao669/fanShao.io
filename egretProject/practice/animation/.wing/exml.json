@@ -1,0 +1,32 @@
+{
+  "global": {
+    "globalRulerEnable": true,
+    "globalAdsorbEnable": false,
+    "globalBindingDataTestObj": [],
+    "globalAutoLayerMarkEnable": false
+  },
+  "15d36355ef3": {
+    "guideLinesEnabled": true,
+    "bindingDataTestObj": [],
+    "backgroundType": "null",
+    "backgroundX": 0,
+    "backgroundY": 0,
+    "backgroundWidth": -1,
+    "backgroundHeight": -1,
+    "useBgImage": true,
+    "useBgColor": true,
+    "backgroundAlpha": 100
+  },
+  "15d39901cae": {
+    "backgroundX": 0,
+    "backgroundY": 0,
+    "backgroundWidth": -1,
+    "backgroundHeight": -1
+  },
+  "15d39901caf": {
+    "useBgImage": true,
+    "useBgColor": true,
+    "backgroundAlpha": 100,
+    "bindingDataTestObj": []
+  }
+}

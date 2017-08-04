@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <style>
+        .box{
+            position:fixed;
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            cursor:pointer;
+            z-index: 6;
+        }
+        .ch{
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            background: red;
+            z-index: 5;
+        }
+        .box1{
+            position: absolute;
+         /*   top: 50px;
+            left: 50px;*/
+            width: 200px;
+            height: 150px;
+            background: yellow;
+            /*z-index: 3*/
+        }
+        .box2{
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box2">
+            <div class="ch">
+                dd
+            </div>
+            <div class="box1">
+            aa
+            </div>
+        </div>
+         
+    </div>
+ 
+</body>
+</html>

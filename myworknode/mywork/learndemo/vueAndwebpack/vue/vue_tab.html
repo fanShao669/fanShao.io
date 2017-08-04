@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue_tab</title>
+    <script src="vue.js"></script>
+    <!--copy from http://vuejs.org.cn/guide/-->
+</head>
+<body>
+    <div id="app">
+        <p v-if="willShow" @click="fn()">显示显示显示</p>
+        <p v-else>隐藏隐藏隐藏隐藏</p>
+        <button @click="fn()">改变</button>
+    </div>
+<script>
+   Vue.component('child1', { 
+ template: "<p>this is child1</p>"
+})
+Vue.component('child2', { 
+ template: "<p>this is child2</p>"
+})
+new Vue({ 
+ el: "#app", 
+ data: { 
+ active: 0, 
+ currentView: 'child1', 
+ tabs: [ 
+ {  
+  type: 'tab1', 
+  view: 'child1' 
+ },  
+ {  
+  type: 'tab2', 
+  view: 'child2' 
+ } 
+ ] 
+}, 
+ methods: { 
+ toggle(i, v){ 
+ this.active = i 
+ this.currentView = v 
+ } 
+ }
+})
+</script>
+</body>
+</html>

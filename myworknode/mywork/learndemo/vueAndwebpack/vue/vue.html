@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>事件绑定测试</title>
+    <style type="text/css" rel="stylesheet">
+       
+    </style>
+</head>
+<body>
+    <input type="text" v-model.number="ipt" placeholder="数字" type="number">
+<script src="../../js/jquery-1.7.2.min.js"></script>
+<script src="vue.js"></script>
+<script type="application/javascript">
+    var vm = new Vue({
+        el: '#map',
+        data: {
+            ipt:'fasf'
+        },
+        methods :{
+            onclick : function(e){
+                alert("click");
+            },
+            onhover : function(e){
+                alert("hover");
+            },
+            enter : function(e){
+                alert("enter");
+            }
+        }
+    })
+
+</script>
+</body>
+</html>
