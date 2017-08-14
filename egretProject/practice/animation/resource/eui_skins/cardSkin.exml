@@ -1,6 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="cadrdSkin" width="462" height="421" xmlns:e="http://ns.egret.com/eui">
-	<e:Image source="status_png" x="36" y="61" width="21" height="34" mask="1" horizontalCenter="-59.5" verticalCenter="-112.5"/>
-	<e:Image source="card_png" x="112" y="121" width="100" height="200"/>
-	<e:Image source="card_png" x="165" y="116"/>
-</e:Skin>
