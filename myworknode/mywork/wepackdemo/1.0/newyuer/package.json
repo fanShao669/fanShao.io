@@ -1,0 +1,36 @@
+{
+  "name": "newyuer",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "NODE_ENV=development supervisor --debug -w server,app.js app",
+    "build": "NODE_ENV=production webpack --progress --hide-modules"
+  },
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.8.1",
+    "nunjucks": "^3.0.1",
+    "redis": "^2.8.0",
+    "request": "^2.81.0",
+    "serve-favicon": "~2.4.2",
+    "thenjs": "^2.0.6"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.5",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.11.2",
+    "html-webpack-plugin": "^2.30.1",
+    "style-loader": "^0.18.2",
+    "supervisor": "^0.12.0",
+    "url-loader": "^0.5.9",
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.18.2",
+    "webpack-merge": "^4.1.0"
+  }
+}
